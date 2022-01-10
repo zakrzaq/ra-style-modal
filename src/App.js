@@ -1,8 +1,17 @@
-import React from 'react';
+import React from "react";
+import State from "./State";
+import { RefHook } from "./Ref";
+import { ReducerHook } from "./ReducerHook";
 
 const App = () => {
   return (
-    <h1>Howdy Jake</h1>
+    <>
+      <State />
+      <RefHook />
+      <RefHook />
+      <RefHook />
+      <ReducerHook />
+    </>
   );
 };
 
