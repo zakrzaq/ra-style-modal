@@ -1,17 +1,22 @@
 import React from "react";
-import State from "./State";
-import { RefHook } from "./Ref";
-import { ReducerHook } from "./ReducerHook";
+// import "./App.css";
+import Modal from "./components/Modal";
+import useModal from "./services/hooks/useModal";
 
 const App = () => {
+  const { isShowing, toggle } = useModal();
   return (
-    <>
-      <State />
-      <RefHook />
-      <RefHook />
-      <RefHook />
-      <ReducerHook />
-    </>
+    <div className="App">
+      <button className="button-default" onClick={toggle}>
+        Show Modal
+      </button>
+      <Modal
+        isShowing={isShowing}
+        hide={toggle}
+        header={"Judy is awesome"}
+        content={"Some text here"}
+      />
+    </div>
   );
 };
 
